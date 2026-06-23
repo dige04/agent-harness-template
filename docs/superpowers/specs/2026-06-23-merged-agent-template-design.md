@@ -176,9 +176,9 @@ published assets under our repo:**
 5. During early dev, develop `setup.sh` against `HARNESS_CLI_BASE_URL` pointed at a local
    `cargo build` artifact.
 
-**Repo-visibility nuance:** if the template repo is GitHub-private, the binary download needs
-auth (token). Decide visibility before wiring the download (public template repo is simplest;
-the CLI is MIT regardless).
+**Repo visibility — DECIDED: public.** The template repo is public, so the CLI binary
+download is unauthenticated (a plain `curl` against the release asset). No token handling in
+`setup.sh`. The CLI is MIT, so publishing the binary publicly is fine.
 
 ### 3.8 `setup.sh` + `doctor.sh` (v1)
 
