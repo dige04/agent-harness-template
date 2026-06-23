@@ -1,0 +1,14 @@
+# Harness durable layer — local-only; schema is version-controlled
+harness.db
+harness.db-*
+*.db
+# Downloaded per-platform CLI binary — never committed
+scripts/bin/harness-cli
+scripts/bin/harness-cli.exe
+# Rust build artifacts (vendored crates/ build to here)
+/target/
+# Env / OS
+.env*
+.DS_Store
+.claude/settings.local.json
+node_modules/
