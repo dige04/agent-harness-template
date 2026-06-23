@@ -18,3 +18,11 @@ and `loops/BOUNDARY.md` for which layer owns which concept. Reusable procedures 
 <!-- LOOPS:END -->
 EOF
 }
+# Claude Code auto-loads CLAUDE.md but not AGENTS.md, so the bridge imports AGENTS.md (the contract).
+render_claude_bridge() {
+  cat <<'EOF'
+<!-- CLAUDE-BRIDGE:BEGIN -->
+@AGENTS.md
+<!-- CLAUDE-BRIDGE:END -->
+EOF
+}

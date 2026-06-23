@@ -56,7 +56,7 @@ merge_gitignore() {
   local src="$1" tgt="$2" line
   [ -e "$tgt" ] || : > "$tgt"
   while IFS= read -r line || [ -n "$line" ]; do
-    [ -z "$line" ] && continue
+    if [ -z "$line" ]; then continue; fi
     grep -qxF "$line" "$tgt" || printf '%s\n' "$line" >> "$tgt"
   done < "$src"
 }
