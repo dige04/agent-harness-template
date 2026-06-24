@@ -90,7 +90,7 @@ target's `AGENTS.md` while preserving project-owned prose. Flags:
 
 - `--merge` — keep existing files; create only missing ones (the safe update path)
 - `--override` — back up then replace vendor-managed files
-- `--force` — proceed on protected paths without prompting
+- `--force` — force-replace vendor-managed files (alias for `--override`)
 - `--dry-run` — print the plan and exit without writing
 - `--claude` — also write a thin `CLAUDE.md` bridge (`@AGENTS.md`) and the `.claude/` profile
 - `--yes` — non-interactive

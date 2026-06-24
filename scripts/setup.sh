@@ -7,7 +7,7 @@ set -uo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SRC_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"   # template repo root (local run-mode)
 
-MODE="merge"; TARGET="."; DRY_RUN=0; CLAUDE=0; YES=0; FORCE=0
+MODE="merge"; TARGET="."; DRY_RUN=0; CLAUDE=0; YES=0
 
 usage() {
   echo "usage: setup.sh [--merge|--override] [--force] [--dry-run] [--claude] [--yes] [--target DIR]"
@@ -16,7 +16,7 @@ while [ $# -gt 0 ]; do
   case "$1" in
     --merge) MODE="merge" ;;
     --override) MODE="override" ;;
-    --force) FORCE=1 ;;
+    --force) MODE="override" ;;   # force-replace vendor-managed files (alias for --override)
     --dry-run) DRY_RUN=1 ;;
     --claude) CLAUDE=1 ;;
     --yes) YES=1 ;;
